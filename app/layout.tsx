@@ -3,6 +3,8 @@ import { Montserrat, Playfair_Display } from 'next/font/google';
 
 import SmoothScroll from '@/components/layout/SmoothScroll';
 
+import { siteConfig } from '@/config/site';
+
 import './globals.css';
 
 const montserrat = Montserrat({
@@ -20,9 +22,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'Thanh Huyền Beauty - Spa Chăm Sóc Da Chuyên Nghiệp',
-  description:
-    'Thanh Huyền Beauty Spa - Nơi chăm sóc da chuyên nghiệp với công nghệ hiện đại và đội ngũ chuyên viên giàu kinh nghiệm.',
+  title: siteConfig.seo.defaultTitle,
+  description: siteConfig.seo.defaultDescription,
   keywords: 'spa, chăm sóc da, trị mụn, dưỡng trắng, chống lão hóa, thanh huyền beauty',
   robots: {
     index: true,
@@ -38,35 +39,33 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'vi_VN',
-    url: 'https://thanh-huyen-beauty.com/',
-    title: 'Thanh Huyền Beauty - Spa Chăm Sóc Da Chuyên Nghiệp',
-    description:
-      'Thanh Huyền Beauty Spa - Nơi chăm sóc da chuyên nghiệp với công nghệ hiện đại và đội ngũ chuyên viên giàu kinh nghiệm.',
-    siteName: 'Thanh Huyền Beauty',
+    url: siteConfig.seo.siteUrl,
+    title: siteConfig.seo.defaultTitle,
+    description: siteConfig.seo.defaultDescription,
+    siteName: siteConfig.business.name,
     images: [
       {
-        url: 'https://thanh-huyen-beauty.com/og-image.jpg',
+        url: siteConfig.seo.ogImage,
         width: 1200,
         height: 630,
-        alt: 'Thanh Huyền Beauty Spa',
+        alt: siteConfig.business.name,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Thanh Huyền Beauty - Spa Chăm Sóc Da Chuyên Nghiệp',
-    description:
-      'Thanh Huyền Beauty Spa - Nơi chăm sóc da chuyên nghiệp với công nghệ hiện đại và đội ngũ chuyên viên giàu kinh nghiệm.',
-    images: ['https://thanh-huyen-beauty.com/og-image.jpg'],
+    title: siteConfig.seo.defaultTitle,
+    description: siteConfig.seo.defaultDescription,
+    images: [siteConfig.seo.ogImage],
   },
   alternates: {
-    canonical: 'https://thanh-huyen-beauty.com',
+    canonical: siteConfig.seo.siteUrl,
   },
-  metadataBase: new URL('https://thanh-huyen-beauty.com'),
+  metadataBase: new URL(siteConfig.seo.siteUrl),
   manifest: '/manifest.json',
   themeColor: '#d6a863',
   appleWebApp: {
-    title: 'Thanh Huyền Beauty',
+    title: siteConfig.business.name,
     statusBarStyle: 'default',
   },
 };

@@ -6,6 +6,8 @@ import Link from 'next/link';
 import { faCheck, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import { siteConfig } from '@/config/site';
+
 import ParallaxEffect from '../layout/ParallaxEffect';
 import ScrollAnimation from '../layout/ScrollAnimation';
 
@@ -16,7 +18,7 @@ const About = () => {
         <ScrollAnimation variant="fadeUp">
           <div className="mb-16 text-center">
             <h2 className="section-title mb-4 inline-block font-serif text-3xl font-bold">
-              Về Thanh Huyền Beauty
+              Về {siteConfig.business.name}
             </h2>
             <p className="mx-auto max-w-3xl text-gray-600">
               Chúng tôi mang đến những dịch vụ chăm sóc da cao cấp với tiêu chuẩn chất lượng quốc tế
@@ -45,9 +47,10 @@ const About = () => {
                 Tiêu chí của chúng tôi
               </h3>
               <p className="mb-6 text-gray-600">
-                Thanh Huyền Beauty tự hào là địa chỉ chăm sóc da uy tín tại Thủ Đức, với phương châm
-                &ldquo;Vẻ đẹp tự nhiên - Tôn vinh nét riêng&rdquo;. Chúng tôi cam kết mang đến cho
-                khách hàng những trải nghiệm thư giãn tuyệt vời cùng hiệu quả chăm sóc da tối ưu.
+                {siteConfig.business.name} tự hào là địa chỉ chăm sóc da uy tín tại Thủ Đức, với
+                phương châm &ldquo;Vẻ đẹp tự nhiên - Tôn vinh nét riêng&rdquo;. Chúng tôi cam kết
+                mang đến cho khách hàng những trải nghiệm thư giãn tuyệt vời cùng hiệu quả chăm sóc
+                da tối ưu.
               </p>
             </ScrollAnimation>
             <ScrollAnimation variant="fadeLeft" delay={0.2}>

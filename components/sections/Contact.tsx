@@ -5,6 +5,8 @@ import { faFacebookF, faInstagram, faTiktok } from '@fortawesome/free-brands-svg
 import { faClock, faEnvelope, faMapMarkerAlt, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import { siteConfig } from '@/config/site';
+
 interface ContactInfoItemProps {
   icon: IconDefinition;
   title: string;
@@ -50,42 +52,39 @@ const Contact = () => {
             >
               <h3
                 className="mb-6 font-serif text-xl font-semibold"
-                style={{ color: 'var(--primary-dark)' }}
+                style={{ color: 'var(--text-primary-dark)' }}
               >
                 Thông Tin Liên Hệ
               </h3>
 
               <div className="space-y-6">
                 <ContactInfoItem icon={faMapMarkerAlt} title="Địa chỉ">
-                  <p className="text-gray-600">
-                    86 Đường số 6, Phường Linh Trung, Thành phố Thủ Đức
-                  </p>
+                  <p className="text-gray-600">{siteConfig.contact.address}</p>
                 </ContactInfoItem>
 
                 <ContactInfoItem icon={faPhoneAlt} title="Điện thoại">
-                  <a
-                    href="tel:+84901234567"
-                    className="text-gray-600 hover:text-opacity-70 transition"
-                  >
-                    090 123 4567
-                  </a>
+                  {siteConfig.contact.phone.map((phone, index) => (
+                    <a
+                      key={index}
+                      href={`tel:${phone}`}
+                      className="block text-gray-600 hover:text-opacity-70 transition"
+                    >
+                      {phone}
+                    </a>
+                  ))}
                 </ContactInfoItem>
 
                 <ContactInfoItem icon={faEnvelope} title="Email">
                   <a
-                    href="mailto:info@thanhhuyenbeauty.com"
+                    href={`mailto:${siteConfig.contact.email}`}
                     className="text-gray-600 hover:text-opacity-70 transition"
                   >
-                    info@thanhhuyenbeauty.com
+                    {siteConfig.contact.email}
                   </a>
                 </ContactInfoItem>
 
                 <ContactInfoItem icon={faClock} title="Giờ mở cửa">
-                  <p className="text-gray-600">
-                    Thứ 2 - Thứ 7: 9:00 - 21:00
-                    <br />
-                    Chủ Nhật: 9:00 - 18:00
-                  </p>
+                  <p className="text-gray-600">{siteConfig.contact.workingHours}</p>
                 </ContactInfoItem>
               </div>
 
@@ -93,7 +92,7 @@ const Contact = () => {
                 <h4 className="mb-4 font-medium text-gray-700">Kết nối với chúng tôi</h4>
                 <div className="flex space-x-4">
                   <a
-                    href="https://facebook.com/thanhhuyenbeauty"
+                    href={siteConfig.social.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex h-10 w-10 items-center justify-center rounded-full transition duration-300 hover:opacity-80"
@@ -106,7 +105,7 @@ const Contact = () => {
                     <FontAwesomeIcon icon={faFacebookF} />
                   </a>
                   <a
-                    href="https://instagram.com/thanhhuyenbeauty"
+                    href={siteConfig.social.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex h-10 w-10 items-center justify-center rounded-full transition duration-300 hover:opacity-80"
@@ -119,7 +118,7 @@ const Contact = () => {
                     <FontAwesomeIcon icon={faInstagram} />
                   </a>
                   <a
-                    href="https://tiktok.com/@thanhhuyenbeauty"
+                    href={siteConfig.social.tiktok}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex h-10 w-10 items-center justify-center rounded-full transition duration-300 hover:opacity-80"
@@ -131,19 +130,21 @@ const Contact = () => {
                   >
                     <FontAwesomeIcon icon={faTiktok} />
                   </a>
-                  <a
-                    href="https://zalo.me/thanhhuyenbeauty"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex h-10 w-10 items-center justify-center rounded-full transition duration-300 hover:opacity-80"
-                    style={{
-                      backgroundColor: 'var(--primary)',
-                      color: 'var(--text-primary-dark)',
-                    }}
-                    aria-label="Zalo"
-                  >
-                    <span className="text-xs font-medium">Zalo</span>
-                  </a>
+                  {siteConfig.social.zalo && (
+                    <a
+                      href={siteConfig.social.zalo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-10 w-10 items-center justify-center rounded-full transition duration-300 hover:opacity-80"
+                      style={{
+                        backgroundColor: 'var(--primary)',
+                        color: 'var(--text-primary-dark)',
+                      }}
+                      aria-label="Zalo"
+                    >
+                      <span className="text-xs font-medium">Zalo</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

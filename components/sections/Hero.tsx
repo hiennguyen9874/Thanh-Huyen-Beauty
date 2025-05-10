@@ -6,6 +6,8 @@ import Link from 'next/link';
 import { faCalendarCheck, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import { siteConfig } from '@/config/site';
+
 import ParallaxEffect from '../layout/ParallaxEffect';
 import ScrollAnimation from '../layout/ScrollAnimation';
 
@@ -30,12 +32,9 @@ const Hero = () => {
               className="mb-6 font-serif text-4xl font-bold md:text-5xl lg:text-6xl"
               style={{ color: 'var(--text-primary)' }}
             >
-              Thanh Huyền Beauty Spa
+              {siteConfig.business.name}
             </h1>
-            <p className="mb-8 max-w-lg text-xl text-gray-700">
-              Nơi chăm sóc da chuyên nghiệp với công nghệ hiện đại và đội ngũ chuyên viên giàu kinh
-              nghiệm
-            </p>
+            <p className="mb-8 max-w-lg text-xl text-gray-700">{siteConfig.business.description}</p>
             <div className="flex flex-wrap justify-center gap-4 md:justify-start">
               <ScrollAnimation variant="fadeUp" delay={0.4}>
                 <Link

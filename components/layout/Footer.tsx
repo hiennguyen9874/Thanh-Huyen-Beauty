@@ -28,6 +28,9 @@ const Footer = () => {
             <Link href="/#pricing" className="opacity-80 transition hover:opacity-100">
               Bảng giá
             </Link>
+            <Link href="/#testimonials" className="opacity-80 transition hover:opacity-100">
+              Cảm nhận
+            </Link>
             <Link href="/blog" className="opacity-80 transition hover:opacity-100">
               Blog
             </Link>

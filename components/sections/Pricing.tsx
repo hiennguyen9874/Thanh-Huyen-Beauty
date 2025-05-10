@@ -43,7 +43,8 @@ const PricingTier = ({
       rounded-xl p-8
       relative overflow-hidden transition-all duration-300
       hover:shadow-lg hover:-translate-y-2
-      transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
+      transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}
+      flex flex-col min-h-full`}
       style={{
         backgroundColor: isPrimary ? 'var(--secondary)' : 'var(--tertiary)',
         transitionDelay: `${delay}ms`,
@@ -69,7 +70,7 @@ const PricingTier = ({
           {price}
         </div>
       </div>
-      <ul className="mb-8 space-y-3">
+      <ul className="mb-8 space-y-3 flex-grow">
         {features.map((feature, index) => (
           <li key={index} className="flex items-start">
             <FontAwesomeIcon
@@ -83,7 +84,7 @@ const PricingTier = ({
           </li>
         ))}
       </ul>
-      <div className="text-center">
+      <div className="text-center mt-auto pt-4">
         <Link
           href="#booking"
           className={`inline-block px-6 py-2 rounded-full font-medium transition duration-300 hover:scale-105 ${
@@ -121,7 +122,7 @@ const SpecialService = ({ icon, title, price, index = 0 }: SpecialServiceProps) 
 
   return (
     <div
-      className={`flex items-start transition-all duration-300 p-3 rounded-lg transform hover:bg-opacity-50 hover:shadow-sm ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'}`}
+      className={`flex items-start transition-all duration-300 p-3 rounded-lg transform hover:bg-[var(--primary)] hover:bg-opacity-50 hover:shadow-sm ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'}`}
       style={{
         transitionDelay: `${100 * index}ms`,
       }}

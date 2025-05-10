@@ -1,47 +1,44 @@
 import Script from 'next/script';
 
+import { siteConfig } from '@/config/site';
+
 export default function StructuredData() {
-  const structuredData = {
+  const { business, contact, seo, structuredData, social } = siteConfig;
+
+  const structuredDataObj = {
     '@context': 'https://schema.org',
     '@type': 'BeautySalon',
-    name: 'Thanh Huyền Beauty',
-    image: 'https://thanh-huyen-beauty.com/og-image.jpg',
-    '@id': 'https://thanh-huyen-beauty.com',
-    url: 'https://thanh-huyen-beauty.com',
-    telephone: '+84 123456789',
+    name: business.name,
+    image: structuredData.image,
+    '@id': seo.siteUrl,
+    url: seo.siteUrl,
+    telephone: contact.phone[0],
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '123 Đường Lê Lợi',
-      addressLocality: 'Hà Nội',
-      postalCode: '100000',
-      addressCountry: 'VN',
+      ...structuredData.postalAddress,
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: 21.0278,
-      longitude: 105.8342,
+      ...structuredData.geo,
     },
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-        opens: '09:00',
-        closes: '21:00',
+        dayOfWeek: structuredData.openingHours.dayOfWeek,
+        opens: structuredData.openingHours.opens,
+        closes: structuredData.openingHours.closes,
       },
     ],
-    priceRange: '$$',
-    servesCuisine: 'Beauty Treatments',
-    sameAs: [
-      'https://www.facebook.com/thanhhuyen.beauty',
-      'https://www.instagram.com/thanhhuyen.beauty',
-    ],
+    priceRange: structuredData.priceRange,
+    servesCuisine: structuredData.serviceType,
+    sameAs: [social.facebook, social.instagram].filter(Boolean),
   };
 
   return (
     <Script
       id="structured-data"
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredDataObj) }}
     />
   );
 }
