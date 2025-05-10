@@ -7,14 +7,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { blogPosts } from '@/config/blog';
 
-interface Props {
-  params: {
-    slug: string;
-  };
-}
+type Params = Promise<{ slug: string }>;
 
-export default function BlogPost({ params }: Props) {
-  const post = blogPosts.find((post) => post.slug === params.slug);
+export default async function BlogPost({ params }: { params: Params }) {
+  const { slug } = await params;
+  const post = blogPosts.find((post) => post.slug === slug);
 
   if (!post) {
     notFound();
