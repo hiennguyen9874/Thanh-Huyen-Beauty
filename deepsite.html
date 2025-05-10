@@ -1,0 +1,1324 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thanh Huyền Beauty - Spa Chăm Sóc Da Chuyên Nghiệp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: #f8c8dc;
+        --primary-dark: #e8a4c4;
+        --secondary: #f0e6ef;
+        --text: #5a4a42;
+        --light: #fff9fb;
+      }
+
+      body {
+        font-family: 'Montserrat', sans-serif;
+        color: var(--text);
+        background-color: var(--light);
+        scroll-behavior: smooth;
+      }
+
+      .font-serif {
+        font-family: 'Playfair Display', serif;
+      }
+
+      .hero {
+        background:
+          linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
+          url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80');
+        background-size: cover;
+        background-position: center;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(248, 200, 220, 0.3);
+      }
+
+      .testimonial-card {
+        background-color: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+      }
+
+      .section-title::after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 3px;
+        background: var(--primary);
+        margin: 15px auto 0;
+        border-radius: 3px;
+      }
+
+      .nav-link:hover {
+        color: var(--primary-dark);
+      }
+
+      .btn-primary {
+        background: var(--primary);
+        color: var(--text);
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        background: var(--primary-dark);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(248, 200, 220, 0.4);
+      }
+
+      .blog-card:hover img {
+        transform: scale(1.05);
+      }
+
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <!-- Navigation -->
+    <nav class="fixed z-50 w-full bg-white/90 shadow-sm backdrop-blur-sm">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-20 items-center justify-between">
+          <div class="flex items-center">
+            <span class="font-serif text-2xl font-semibold text-pink-800">Thanh Huyền Beauty</span>
+          </div>
+          <div class="hidden items-center space-x-8 md:flex">
+            <a
+              href="#home"
+              class="nav-link font-medium text-gray-700 transition hover:text-pink-600"
+              >Trang chủ</a
+            >
+            <a
+              href="#about"
+              class="nav-link font-medium text-gray-700 transition hover:text-pink-600"
+              >Giới thiệu</a
+            >
+            <a
+              href="#services"
+              class="nav-link font-medium text-gray-700 transition hover:text-pink-600"
+              >Dịch vụ</a
+            >
+            <a
+              href="#pricing"
+              class="nav-link font-medium text-gray-700 transition hover:text-pink-600"
+              >Bảng giá</a
+            >
+            <a
+              href="#testimonials"
+              class="nav-link font-medium text-gray-700 transition hover:text-pink-600"
+              >Cảm nhận</a
+            >
+            <a
+              href="#blog"
+              class="nav-link font-medium text-gray-700 transition hover:text-pink-600"
+              >Blog</a
+            >
+            <a
+              href="#contact"
+              class="nav-link font-medium text-gray-700 transition hover:text-pink-600"
+              >Liên hệ</a
+            >
+          </div>
+          <div class="flex items-center md:hidden">
+            <button id="menu-btn" class="text-gray-700 hover:text-pink-600 focus:outline-none">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="hidden bg-white shadow-lg md:hidden">
+        <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
+          <a
+            href="#home"
+            class="block rounded-md px-3 py-2 font-medium text-gray-700 hover:bg-pink-50 hover:text-pink-600"
+            >Trang chủ</a
+          >
+          <a
+            href="#about"
+            class="block rounded-md px-3 py-2 font-medium text-gray-700 hover:bg-pink-50 hover:text-pink-600"
+            >Giới thiệu</a
+          >
+          <a
+            href="#services"
+            class="block rounded-md px-3 py-2 font-medium text-gray-700 hover:bg-pink-50 hover:text-pink-600"
+            >Dịch vụ</a
+          >
+          <a
+            href="#pricing"
+            class="block rounded-md px-3 py-2 font-medium text-gray-700 hover:bg-pink-50 hover:text-pink-600"
+            >Bảng giá</a
+          >
+          <a
+            href="#testimonials"
+            class="block rounded-md px-3 py-2 font-medium text-gray-700 hover:bg-pink-50 hover:text-pink-600"
+            >Cảm nhận</a
+          >
+          <a
+            href="#blog"
+            class="block rounded-md px-3 py-2 font-medium text-gray-700 hover:bg-pink-50 hover:text-pink-600"
+            >Blog</a
+          >
+          <a
+            href="#contact"
+            class="block rounded-md px-3 py-2 font-medium text-gray-700 hover:bg-pink-50 hover:text-pink-600"
+            >Liên hệ</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero flex min-h-screen items-center justify-center pt-20">
+      <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div class="flex flex-col items-center md:flex-row">
+          <div class="mb-10 text-center md:mb-0 md:w-1/2 md:text-left">
+            <h1 class="mb-6 font-serif text-4xl font-bold text-pink-800 md:text-5xl lg:text-6xl">
+              Thanh Huyền Beauty Spa
+            </h1>
+            <p class="mb-8 max-w-lg text-xl text-gray-700">
+              Nơi chăm sóc da chuyên nghiệp với công nghệ hiện đại và đội ngũ chuyên viên giàu kinh
+              nghiệm
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 md:justify-start">
+              <a
+                href="#booking"
+                class="btn-primary rounded-full px-8 py-3 font-medium transition duration-300"
+              >
+                <i class="fas fa-calendar-check mr-2"></i> Đặt lịch ngay
+              </a>
+              <a
+                href="#contact"
+                class="rounded-full border border-pink-300 px-8 py-3 font-medium text-pink-700 transition duration-300 hover:bg-pink-50"
+              >
+                <i class="fas fa-phone-alt mr-2"></i> Liên hệ
+              </a>
+            </div>
+          </div>
+          <div class="flex justify-center md:w-1/2">
+            <div class="animate-float relative h-64 w-64 md:h-80 md:w-80">
+              <img
+                src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
+                alt="Spa treatment"
+                class="h-full w-full rounded-full border-8 border-white object-cover shadow-xl"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-white py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-16 text-center">
+          <h2 class="section-title mb-4 inline-block font-serif text-3xl font-bold">
+            Về Thanh Huyền Beauty
+          </h2>
+          <p class="mx-auto max-w-3xl text-gray-600">
+            Chúng tôi mang đến những dịch vụ chăm sóc da cao cấp với tiêu chuẩn chất lượng quốc tế
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center gap-12 md:flex-row">
+          <div class="md:w-1/2">
+            <img
+              src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+              alt="Spa interior"
+              class="h-auto w-full rounded-xl shadow-lg"
+            />
+          </div>
+          <div class="md:w-1/2">
+            <h3 class="mb-4 font-serif text-2xl font-semibold text-pink-800">
+              Tiêu chí của chúng tôi
+            </h3>
+            <p class="mb-6 text-gray-600">
+              Thanh Huyền Beauty tự hào là địa chỉ chăm sóc da uy tín tại Thủ Đức, với phương châm
+              "Vẻ đẹp tự nhiên - Tôn vinh nét riêng". Chúng tôi cam kết mang đến cho khách hàng
+              những trải nghiệm thư giãn tuyệt vời cùng hiệu quả chăm sóc da tối ưu.
+            </p>
+            <ul class="mb-8 space-y-4">
+              <li class="flex items-start">
+                <div class="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-pink-100">
+                  <i class="fas fa-check text-pink-600"></i>
+                </div>
+                <span class="flex-1 text-gray-600"
+                  >Sử dụng mỹ phẩm cao cấp, có nguồn gốc rõ ràng</span
+                >
+              </li>
+              <li class="flex items-start">
+                <div class="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-pink-100">
+                  <i class="fas fa-check text-pink-600"></i>
+                </div>
+                <span class="flex-1 text-gray-600">Quy trình chuẩn y khoa, an toàn tuyệt đối</span>
+              </li>
+              <li class="flex items-start">
+                <div class="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-pink-100">
+                  <i class="fas fa-check text-pink-600"></i>
+                </div>
+                <span class="flex-1 text-gray-600">Đội ngũ chuyên viên được đào tạo bài bản</span>
+              </li>
+              <li class="flex items-start">
+                <div class="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-pink-100">
+                  <i class="fas fa-check text-pink-600"></i>
+                </div>
+                <span class="flex-1 text-gray-600">Không gian sang trọng, thiết bị hiện đại</span>
+              </li>
+            </ul>
+            <div class="flex flex-wrap gap-4">
+              <a
+                href="#services"
+                class="rounded-full border border-pink-300 px-6 py-2 font-medium text-pink-700 transition duration-300 hover:bg-pink-50"
+              >
+                Xem dịch vụ
+              </a>
+              <a
+                href="#contact"
+                class="rounded-full bg-pink-100 px-6 py-2 font-medium text-pink-700 transition duration-300 hover:bg-pink-200"
+              >
+                <i class="fas fa-map-marker-alt mr-2"></i> Địa chỉ
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-pink-50 py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-16 text-center">
+          <h2 class="section-title mb-4 inline-block font-serif text-3xl font-bold">
+            Dịch Vụ Chăm Sóc Da
+          </h2>
+          <p class="mx-auto max-w-3xl text-gray-600">
+            Các liệu trình chăm sóc da chuyên sâu được thiết kế riêng cho từng loại da và vấn đề cụ
+            thể
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <!-- Service 1 -->
+          <div
+            class="service-card overflow-hidden rounded-xl bg-white shadow-md transition duration-300"
+          >
+            <div
+              class="flex h-48 items-center justify-center bg-gradient-to-r from-pink-100 to-pink-200"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=730&q=80"
+                alt="Trị mụn"
+                class="h-full w-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="mb-2 font-serif text-xl font-semibold text-pink-800">
+                Trị Mụn Chuyên Sâu
+              </h3>
+              <p class="mb-4 text-gray-600">
+                Liệu trình đặc biệt giúp loại bỏ mụn tận gốc, giảm viêm sưng và ngăn ngừa mụn tái
+                phát.
+              </p>
+              <div class="flex items-center justify-between">
+                <span class="font-medium text-pink-600">Từ 500.000đ</span>
+                <a
+                  href="#booking"
+                  class="flex items-center text-sm font-medium text-pink-600 hover:text-pink-800"
+                >
+                  Đặt lịch <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 2 -->
+          <div
+            class="service-card overflow-hidden rounded-xl bg-white shadow-md transition duration-300"
+          >
+            <div
+              class="flex h-48 items-center justify-center bg-gradient-to-r from-pink-100 to-pink-200"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1556228579-6d9c2c8c6949?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                alt="Tái tạo da"
+                class="h-full w-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="mb-2 font-serif text-xl font-semibold text-pink-800">
+                Tái Tạo Da Sinh Học
+              </h3>
+              <p class="mb-4 text-gray-600">
+                Phục hồi làn da hư tổn, kích thích tái tạo tế bào mới cho làn da căng mịn, trắng
+                sáng.
+              </p>
+              <div class="flex items-center justify-between">
+                <span class="font-medium text-pink-600">Từ 800.000đ</span>
+                <a
+                  href="#booking"
+                  class="flex items-center text-sm font-medium text-pink-600 hover:text-pink-800"
+                >
+                  Đặt lịch <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 3 -->
+          <div
+            class="service-card overflow-hidden rounded-xl bg-white shadow-md transition duration-300"
+          >
+            <div
+              class="flex h-48 items-center justify-center bg-gradient-to-r from-pink-100 to-pink-200"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1570172619644-dfd03ed7d3fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                alt="Chống lão hóa"
+                class="h-full w-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="mb-2 font-serif text-xl font-semibold text-pink-800">
+                Chống Lão Hóa Premium
+              </h3>
+              <p class="mb-4 text-gray-600">
+                Giảm nếp nhăn, cải thiện độ đàn hồi, làm chậm quá trình lão hóa với công nghệ RF
+                hiện đại.
+              </p>
+              <div class="flex items-center justify-between">
+                <span class="font-medium text-pink-600">Từ 1.200.000đ</span>
+                <a
+                  href="#booking"
+                  class="flex items-center text-sm font-medium text-pink-600 hover:text-pink-800"
+                >
+                  Đặt lịch <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 4 -->
+          <div
+            class="service-card overflow-hidden rounded-xl bg-white shadow-md transition duration-300"
+          >
+            <div
+              class="flex h-48 items-center justify-center bg-gradient-to-r from-pink-100 to-pink-200"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                alt="Dưỡng trắng"
+                class="h-full w-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="mb-2 font-serif text-xl font-semibold text-pink-800">
+                Dưỡng Trắng Hoàn Hảo
+              </h3>
+              <p class="mb-4 text-gray-600">
+                Làm sáng da từ sâu bên trong, đều màu da, giảm thâm nám với tinh chất thiên nhiên
+                quý giá.
+              </p>
+              <div class="flex items-center justify-between">
+                <span class="font-medium text-pink-600">Từ 700.000đ</span>
+                <a
+                  href="#booking"
+                  class="flex items-center text-sm font-medium text-pink-600 hover:text-pink-800"
+                >
+                  Đặt lịch <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 5 -->
+          <div
+            class="service-card overflow-hidden rounded-xl bg-white shadow-md transition duration-300"
+          >
+            <div
+              class="flex h-48 items-center justify-center bg-gradient-to-r from-pink-100 to-pink-200"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
+                alt="Chăm sóc da nhạy cảm"
+                class="h-full w-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="mb-2 font-serif text-xl font-semibold text-pink-800">
+                Chăm Sóc Da Nhạy Cảm
+              </h3>
+              <p class="mb-4 text-gray-600">
+                Dịu nhẹ, phục hồi hàng rào bảo vệ da, giảm kích ứng, đỏ da cho làn da nhạy cảm nhất.
+              </p>
+              <div class="flex items-center justify-between">
+                <span class="font-medium text-pink-600">Từ 600.000đ</span>
+                <a
+                  href="#booking"
+                  class="flex items-center text-sm font-medium text-pink-600 hover:text-pink-800"
+                >
+                  Đặt lịch <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 6 -->
+          <div
+            class="service-card overflow-hidden rounded-xl bg-white shadow-md transition duration-300"
+          >
+            <div
+              class="flex h-48 items-center justify-center bg-gradient-to-r from-pink-100 to-pink-200"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1599351430140-c70f0250bd70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                alt="Chăm sóc da dầu"
+                class="h-full w-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="mb-2 font-serif text-xl font-semibold text-pink-800">Cân Bằng Da Dầu</h3>
+              <p class="mb-4 text-gray-600">
+                Kiểm soát dầu nhờn, thu nhỏ lỗ chân lông, ngăn ngừa mụn cho làn da dầu khỏe mạnh.
+              </p>
+              <div class="flex items-center justify-between">
+                <span class="font-medium text-pink-600">Từ 550.000đ</span>
+                <a
+                  href="#booking"
+                  class="flex items-center text-sm font-medium text-pink-600 hover:text-pink-800"
+                >
+                  Đặt lịch <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 text-center">
+          <a
+            href="#pricing"
+            class="btn-primary inline-flex items-center rounded-full px-8 py-3 font-medium transition duration-300"
+          >
+            <i class="fas fa-tags mr-2"></i> Xem bảng giá đầy đủ
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="bg-white py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-16 text-center">
+          <h2 class="section-title mb-4 inline-block font-serif text-3xl font-bold">
+            Bảng Giá Dịch Vụ
+          </h2>
+          <p class="mx-auto max-w-3xl text-gray-600">
+            Giá dịch vụ có thể thay đổi tùy theo tình trạng da và nhu cầu cá nhân của khách hàng
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          <!-- Basic Package -->
+          <div class="rounded-xl bg-pink-50 p-8 shadow-sm">
+            <div class="mb-6 text-center">
+              <h3 class="mb-2 font-serif text-xl font-semibold text-pink-800">Gói Cơ Bản</h3>
+              <p class="mb-4 text-gray-600">Phù hợp với chăm sóc da định kỳ</p>
+              <div class="text-3xl font-bold text-pink-600">500.000đ - 800.000đ</div>
+            </div>
+            <ul class="mb-8 space-y-3">
+              <li class="flex items-start">
+                <i class="fas fa-check mt-1 mr-3 text-pink-500"></i>
+                <span class="text-gray-600">Tẩy trang & làm sạch sâu</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check mt-1 mr-3 text-pink-500"></i>
+                <span class="text-gray-600">Tẩy tế bào chết</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check mt-1 mr-3 text-pink-500"></i>
+                <span class="text-gray-600">Xông hơi & hút mụn cơ bản</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check mt-1 mr-3 text-pink-500"></i>
+                <span class="text-gray-600">Đắp mặt nạ dưỡng ẩm</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check mt-1 mr-3 text-pink-500"></i>
+                <span class="text-gray-600">Massage mặt thư giãn</span>
+              </li>
+            </ul>
+            <div class="text-center">
+              <a
+                href="#booking"
+                class="inline-block rounded-full border border-pink-300 bg-white px-6 py-2 font-medium text-pink-700 transition duration-300 hover:bg-pink-100"
+              >
+                Đặt lịch ngay
+              </a>
+            </div>
+          </div>
+
+          <!-- Premium Package -->
+          <div class="relative overflow-hidden rounded-xl bg-pink-100 p-8 shadow-md">
+            <div
+              class="absolute top-0 right-0 rounded-bl-lg bg-pink-600 px-4 py-1 text-xs font-bold text-white"
+            >
+              PHỔ BIẾN
+            </div>
+            <div class="mb-6 text-center">
+              <h3 class="mb-2 font-serif text-xl font-semibold text-pink-800">Gói Premium</h3>
+              <p class="mb-4 text-gray-600">Chăm sóc da chuyên sâu</p>
+              <div class="text-3xl font-bold text-pink-600">1.200.000đ - 1.800.000đ</div>
+            </div>
+            <ul class="mb-8 space-y-3">
+              <li class="flex items-start">
+                <i class="fas fa-check mt-1 mr-3 text-pink-600"></i>
+                <span class="text-gray-600">Tất cả dịch vụ trong gói cơ bản</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check mt-1 mr-3 text-pink-600"></i>
+                <span class="text-gray-600">Hút mụn chuyên sâu</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check mt-1 mr-3 text-pink-600"></i>
+                <span class="text-gray-600">Lăn kim hoặc phi kim</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check mt-1 mr-3 text-pink-600"></i>
+                <span class="text-gray-600">Điện di tinh chất cao cấp</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check mt-1 mr-3 text-pink-600"></i>
+                <span class="text-gray-600">Chiếu ánh sáng sinh học</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check mt-1 mr-3 text-pink-600"></i>
+                <span class="text-gray-600">Mặt nạ vàng 24K</span>
+              </li>
+            </ul>
+            <div class="text-center">
+              <a
+                href="#booking"
+                class="btn-primary inline-block rounded-full px-6 py-2 font-medium transition duration-300"
+              >
+                Đặt lịch ngay
+              </a>
+            </div>
+          </div>
+
+          <!-- VIP Package -->
+          <div class="rounded-xl bg-pink-50 p-8 shadow-sm">
+            <div class="mb-6 text-center">
+              <h3 class="mb-2 font-serif text-xl font-semibold text-pink-800">Gói VIP</h3>
+              <p class="mb-4 text-gray-600">Trải nghiệm cao cấp nhất</p>
+              <div class="text-3xl font-bold text-pink-600">2.500.000đ - 4.000.000đ</div>
+            </div>
+            <ul class="mb-8 space-y-3">
+              <li class="flex items-start">
+                <i class="fas fa-check mt-1 mr-3 text-pink-500"></i>
+                <span class="text-gray-600">Tất cả dịch vụ trong gói Premium</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check mt-1 mr-3 text-pink-500"></i>
+                <span class="text-gray-600">Trị liệu bằng tế bào gốc</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check mt-1 mr-3 text-pink-500"></i>
+                <span class="text-gray-600">Công nghệ RF trẻ hóa da</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check mt-1 mr-3 text-pink-500"></i>
+                <span class="text-gray-600">Liệu trình cá nhân hóa</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check mt-1 mr-3 text-pink-500"></i>
+                <span class="text-gray-600">Sản phẩm chăm sóc tại nhà</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check mt-1 mr-3 text-pink-500"></i>
+                <span class="text-gray-600">Tư vấn dinh dưỡng da</span>
+              </li>
+            </ul>
+            <div class="text-center">
+              <a
+                href="#booking"
+                class="inline-block rounded-full border border-pink-300 bg-white px-6 py-2 font-medium text-pink-700 transition duration-300 hover:bg-pink-100"
+              >
+                Đặt lịch ngay
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 rounded-xl bg-pink-50 p-8 shadow-sm">
+          <h3 class="mb-6 text-center font-serif text-xl font-semibold text-pink-800">
+            Dịch Vụ Đặc Biệt
+          </h3>
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div class="flex items-start">
+              <div
+                class="mt-1 mr-4 flex h-10 w-10 items-center justify-center rounded-full bg-pink-100"
+              >
+                <i class="fas fa-spa text-pink-600"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-700">Trị Nám Tận Gốc</h4>
+                <p class="text-sm text-gray-600">Liệu trình 6-8 buổi: 8.000.000đ - 12.000.000đ</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div
+                class="mt-1 mr-4 flex h-10 w-10 items-center justify-center rounded-full bg-pink-100"
+              >
+                <i class="fas fa-leaf text-pink-600"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-700">Trị Sẹo Rỗ</h4>
+                <p class="text-sm text-gray-600">Liệu trình 4-6 buổi: 6.000.000đ - 9.000.000đ</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div
+                class="mt-1 mr-4 flex h-10 w-10 items-center justify-center rounded-full bg-pink-100"
+              >
+                <i class="fas fa-water text-pink-600"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-700">Căng Bóng Da</h4>
+                <p class="text-sm text-gray-600">Liệu trình 3 buổi: 4.500.000đ - 6.000.000đ</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div
+                class="mt-1 mr-4 flex h-10 w-10 items-center justify-center rounded-full bg-pink-100"
+              >
+                <i class="fas fa-magic text-pink-600"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-700">Trẻ Hóa Da</h4>
+                <p class="text-sm text-gray-600">Liệu trình 5 buổi: 7.500.000đ - 10.000.000đ</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="bg-pink-50 py-20">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div class="overflow-hidden rounded-xl bg-white shadow-lg">
+          <div class="md:flex">
+            <div
+              class="flex items-center justify-center bg-gradient-to-b from-pink-100 to-pink-200 p-8 md:w-1/2"
+            >
+              <div class="text-center">
+                <h3 class="mb-4 font-serif text-2xl font-semibold text-pink-800">Đặt Lịch Hẹn</h3>
+                <p class="mb-6 text-gray-600">
+                  Điền thông tin để đặt lịch hẹn với chuyên viên của chúng tôi. Chúng tôi sẽ liên hệ
+                  xác nhận trong vòng 24h.
+                </p>
+                <img
+                  src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                  alt="Booking"
+                  class="mx-auto w-full max-w-xs rounded-lg"
+                />
+              </div>
+            </div>
+            <div class="p-8 md:w-1/2">
+              <form class="space-y-4">
+                <div>
+                  <label for="name" class="mb-1 block text-sm font-medium text-gray-700"
+                    >Họ và tên*</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-pink-500 focus:outline-none"
+                    placeholder="Nguyễn Văn A"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label for="phone" class="mb-1 block text-sm font-medium text-gray-700"
+                    >Số điện thoại*</label
+                  >
+                  <input
+                    type="tel"
+                    id="phone"
+                    class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-pink-500 focus:outline-none"
+                    placeholder="0901234567"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label for="email" class="mb-1 block text-sm font-medium text-gray-700"
+                    >Email</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-pink-500 focus:outline-none"
+                    placeholder="your@email.com"
+                  />
+                </div>
+
+                <div>
+                  <label for="service" class="mb-1 block text-sm font-medium text-gray-700"
+                    >Dịch vụ quan tâm*</label
+                  >
+                  <select
+                    id="service"
+                    class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-pink-500 focus:outline-none"
+                    required
+                  >
+                    <option value="">Chọn dịch vụ</option>
+                    <option value="trị mụn">Trị mụn chuyên sâu</option>
+                    <option value="tái tạo da">Tái tạo da sinh học</option>
+                    <option value="chống lão hóa">Chống lão hóa Premium</option>
+                    <option value="dưỡng trắng">Dưỡng trắng hoàn hảo</option>
+                    <option value="da nhạy cảm">Chăm sóc da nhạy cảm</option>
+                    <option value="da dầu">Cân bằng da dầu</option>
+                    <option value="khác">Tư vấn dịch vụ khác</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="date" class="mb-1 block text-sm font-medium text-gray-700"
+                    >Ngày hẹn*</label
+                  >
+                  <input
+                    type="date"
+                    id="date"
+                    class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-pink-500 focus:outline-none"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label for="time" class="mb-1 block text-sm font-medium text-gray-700"
+                    >Giờ hẹn*</label
+                  >
+                  <select
+                    id="time"
+                    class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-pink-500 focus:outline-none"
+                    required
+                  >
+                    <option value="">Chọn khung giờ</option>
+                    <option value="9-11">9:00 - 11:00</option>
+                    <option value="11-13">11:00 - 13:00</option>
+                    <option value="13-15">13:00 - 15:00</option>
+                    <option value="15-17">15:00 - 17:00</option>
+                    <option value="17-19">17:00 - 19:00</option>
+                    <option value="19-21">19:00 - 21:00</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="note" class="mb-1 block text-sm font-medium text-gray-700"
+                    >Ghi chú</label
+                  >
+                  <textarea
+                    id="note"
+                    rows="3"
+                    class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-pink-500 focus:outline-none"
+                    placeholder="Tình trạng da hoặc yêu cầu đặc biệt..."
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  class="btn-primary w-full rounded-lg px-6 py-3 font-medium transition duration-300"
+                >
+                  <i class="fas fa-paper-plane mr-2"></i> Gửi yêu cầu
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="bg-white py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-16 text-center">
+          <h2 class="section-title mb-4 inline-block font-serif text-3xl font-bold">
+            Cảm Nhận Của Khách Hàng
+          </h2>
+          <p class="mx-auto max-w-3xl text-gray-600">
+            Những chia sẻ chân thực từ khách hàng đã trải nghiệm dịch vụ tại Thanh Huyền Beauty
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-card rounded-xl p-6 shadow-sm">
+            <div class="mb-4 flex items-center">
+              <img
+                src="https://randomuser.me/api/portraits/women/32.jpg"
+                alt="Khách hàng"
+                class="mr-4 h-12 w-12 rounded-full object-cover"
+              />
+              <div>
+                <h4 class="font-semibold text-gray-800">Chị Ngọc Anh</h4>
+                <div class="flex text-sm text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600 italic">
+              "Tôi đã trị mụn ở nhiều nơi nhưng không hiệu quả. Sau 2 tháng tại Thanh Huyền Beauty,
+              da mặt tôi đã sạch mụn hoàn toàn. Chuyên viên rất tận tâm, spa sạch sẽ và thơm tho."
+            </p>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="testimonial-card rounded-xl p-6 shadow-sm">
+            <div class="mb-4 flex items-center">
+              <img
+                src="https://randomuser.me/api/portraits/women/44.jpg"
+                alt="Khách hàng"
+                class="mr-4 h-12 w-12 rounded-full object-cover"
+              />
+              <div>
+                <h4 class="font-semibold text-gray-800">Chị Minh Châu</h4>
+                <div class="flex text-sm text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600 italic">
+              "Liệu trình chống lão hóa tại đây thực sự hiệu quả. Sau 4 buổi, các nếp nhăn đã giảm
+              rõ rệt, da căng mịn hơn hẳn. Mình sẽ tiếp tục đồng hành cùng Thanh Huyền Beauty."
+            </p>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="testimonial-card rounded-xl p-6 shadow-sm">
+            <div class="mb-4 flex items-center">
+              <img
+                src="https://randomuser.me/api/portraits/women/68.jpg"
+                alt="Khách hàng"
+                class="mr-4 h-12 w-12 rounded-full object-cover"
+              />
+              <div>
+                <h4 class="font-semibold text-gray-800">Chị Thu Hà</h4>
+                <div class="flex text-sm text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600 italic">
+              "Da mình thuộc loại nhạy cảm nên rất kén chọn spa. Thanh Huyền Beauty đã giúp mình cải
+              thiện tình trạng đỏ và kích ứng da. Cảm ơn đội ngũ chuyên viên rất nhiều!"
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12 flex justify-center">
+          <div class="inline-flex space-x-2">
+            <button class="h-3 w-3 rounded-full bg-pink-600"></button>
+            <button class="h-3 w-3 rounded-full bg-pink-200"></button>
+            <button class="h-3 w-3 rounded-full bg-pink-200"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="bg-pink-50 py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-16 text-center">
+          <h2 class="section-title mb-4 inline-block font-serif text-3xl font-bold">
+            Kiến Thức Làm Đẹp
+          </h2>
+          <p class="mx-auto max-w-3xl text-gray-600">
+            Chia sẻ kiến thức chăm sóc da từ các chuyên gia của Thanh Huyền Beauty
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <!-- Blog 1 -->
+          <div
+            class="blog-card overflow-hidden rounded-xl bg-white shadow-md transition duration-300"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=730&q=80"
+                alt="Trị mụn"
+                class="h-full w-full object-cover transition duration-500"
+              />
+            </div>
+            <div class="p-6">
+              <div class="mb-3 flex items-center text-sm text-gray-500">
+                <span>Chăm sóc da</span>
+                <span class="mx-2">•</span>
+                <span>15/06/2023</span>
+              </div>
+              <h3 class="mb-3 font-serif text-xl font-semibold text-pink-800">
+                5 Sai Lầm Khi Trị Mụn Tại Nhà
+              </h3>
+              <p class="mb-4 text-gray-600">
+                Những thói quen tưởng chừng vô hại nhưng lại khiến tình trạng mụn trở nên tồi tệ
+                hơn.
+              </p>
+              <a
+                href="#"
+                class="flex items-center text-sm font-medium text-pink-600 hover:text-pink-800"
+              >
+                Đọc tiếp <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Blog 2 -->
+          <div
+            class="blog-card overflow-hidden rounded-xl bg-white shadow-md transition duration-300"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1570172619644-dfd03ed7d3fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                alt="Chống lão hóa"
+                class="h-full w-full object-cover transition duration-500"
+              />
+            </div>
+            <div class="p-6">
+              <div class="mb-3 flex items-center text-sm text-gray-500">
+                <span>Chống lão hóa</span>
+                <span class="mx-2">•</span>
+                <span>02/06/2023</span>
+              </div>
+              <h3 class="mb-3 font-serif text-xl font-semibold text-pink-800">
+                Bí Quyết Trẻ Hóa Da Sau Tuổi 30
+              </h3>
+              <p class="mb-4 text-gray-600">
+                Các bước chăm sóc da cơ bản nhưng hiệu quả để làm chậm quá trình lão hóa.
+              </p>
+              <a
+                href="#"
+                class="flex items-center text-sm font-medium text-pink-600 hover:text-pink-800"
+              >
+                Đọc tiếp <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Blog 3 -->
+          <div
+            class="blog-card overflow-hidden rounded-xl bg-white shadow-md transition duration-300"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                alt="Dưỡng trắng"
+                class="h-full w-full object-cover transition duration-500"
+              />
+            </div>
+            <div class="p-6">
+              <div class="mb-3 flex items-center text-sm text-gray-500">
+                <span>Dưỡng trắng</span>
+                <span class="mx-2">•</span>
+                <span>20/05/2023</span>
+              </div>
+              <h3 class="mb-3 font-serif text-xl font-semibold text-pink-800">
+                Cách Dưỡng Trắng Da An Toàn Mùa Hè
+              </h3>
+              <p class="mb-4 text-gray-600">
+                Bật mí các nguyên liệu thiên nhiên giúp dưỡng trắng da hiệu quả mà không gây kích
+                ứng.
+              </p>
+              <a
+                href="#"
+                class="flex items-center text-sm font-medium text-pink-600 hover:text-pink-800"
+              >
+                Đọc tiếp <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 text-center">
+          <a
+            href="#"
+            class="btn-primary inline-flex items-center rounded-full px-8 py-3 font-medium transition duration-300"
+          >
+            <i class="fas fa-book-open mr-2"></i> Xem tất cả bài viết
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-white py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-16 text-center">
+          <h2 class="section-title mb-4 inline-block font-serif text-3xl font-bold">
+            Liên Hệ Với Chúng Tôi
+          </h2>
+          <p class="mx-auto max-w-3xl text-gray-600">
+            Hãy đến và trải nghiệm không gian thư giãn cùng dịch vụ chăm sóc da chuyên nghiệp
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-12 lg:grid-cols-2">
+          <!-- Contact Info -->
+          <div>
+            <div class="rounded-xl bg-pink-50 p-8 shadow-sm">
+              <h3 class="mb-6 font-serif text-xl font-semibold text-pink-800">Thông Tin Liên Hệ</h3>
+
+              <div class="space-y-6">
+                <div class="flex items-start">
+                  <div
+                    class="mr-4 flex h-10 w-10 items-center justify-center rounded-full bg-pink-100"
+                  >
+                    <i class="fas fa-map-marker-alt text-pink-600"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-gray-700">Địa chỉ</h4>
+                    <p class="text-gray-600">86 Đường số 6, Phường Linh Trung, Thành phố Thủ Đức</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <div
+                    class="mr-4 flex h-10 w-10 items-center justify-center rounded-full bg-pink-100"
+                  >
+                    <i class="fas fa-phone-alt text-pink-600"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-gray-700">Điện thoại</h4>
+                    <a href="tel:+84901234567" class="text-gray-600 hover:text-pink-600"
+                      >090 123 4567</a
+                    >
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <div
+                    class="mr-4 flex h-10 w-10 items-center justify-center rounded-full bg-pink-100"
+                  >
+                    <i class="fas fa-envelope text-pink-600"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-gray-700">Email</h4>
+                    <a
+                      href="mailto:info@thanhhuyenbeauty.com"
+                      class="text-gray-600 hover:text-pink-600"
+                      >info@thanhhuyenbeauty.com</a
+                    >
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <div
+                    class="mr-4 flex h-10 w-10 items-center justify-center rounded-full bg-pink-100"
+                  >
+                    <i class="fas fa-clock text-pink-600"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-gray-700">Giờ mở cửa</h4>
+                    <p class="text-gray-600">
+                      Thứ 2 - Thứ 7: 9:00 - 21:00<br />Chủ Nhật: 9:00 - 18:00
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-8">
+                <h4 class="mb-4 font-medium text-gray-700">Kết nối với chúng tôi</h4>
+                <div class="flex space-x-4">
+                  <a
+                    href="#"
+                    class="flex h-10 w-10 items-center justify-center rounded-full bg-pink-100 text-pink-600 transition duration-300 hover:bg-pink-200"
+                  >
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="flex h-10 w-10 items-center justify-center rounded-full bg-pink-100 text-pink-600 transition duration-300 hover:bg-pink-200"
+                  >
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="flex h-10 w-10 items-center justify-center rounded-full bg-pink-100 text-pink-600 transition duration-300 hover:bg-pink-200"
+                  >
+                    <i class="fab fa-tiktok"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="flex h-10 w-10 items-center justify-center rounded-full bg-pink-100 text-pink-600 transition duration-300 hover:bg-pink-200"
+                  >
+                    <i class="fab fa-zalo"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Map -->
+          <div>
+            <div class="h-full overflow-hidden rounded-xl shadow-lg">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.231239159416!2d106.7926643152608!3d10.869755892258794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527587e9ad5bf%3A0xafa66f9c8be3c91!2sUniversity%20of%20Information%20Technology%20-%20VNUHCM!5e0!3m2!1sen!2s!4v1628683680000!5m2!1sen!2s"
+                width="100%"
+                height="100%"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                class="min-h-[400px]"
+              >
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-pink-800 py-8 text-white">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col items-center justify-between md:flex-row">
+          <div class="mb-4 md:mb-0">
+            <span class="font-serif text-2xl font-semibold">Thanh Huyền Beauty</span>
+            <p class="mt-1 text-sm text-pink-200">Spa chăm sóc da chuyên nghiệp</p>
+          </div>
+
+          <div class="flex flex-wrap justify-center gap-6">
+            <a href="#home" class="text-pink-200 transition hover:text-white">Trang chủ</a>
+            <a href="#about" class="text-pink-200 transition hover:text-white">Giới thiệu</a>
+            <a href="#services" class="text-pink-200 transition hover:text-white">Dịch vụ</a>
+            <a href="#pricing" class="text-pink-200 transition hover:text-white">Bảng giá</a>
+            <a href="#blog" class="text-pink-200 transition hover:text-white">Blog</a>
+            <a href="#contact" class="text-pink-200 transition hover:text-white">Liên hệ</a>
+          </div>
+        </div>
+
+        <div
+          class="mt-8 flex flex-col items-center justify-between border-t border-pink-700 pt-8 md:flex-row"
+        >
+          <div class="mb-4 text-sm text-pink-200 md:mb-0">
+            © 2023 Thanh Huyền Beauty. All rights reserved.
+          </div>
+          <div class="flex space-x-6">
+            <a href="#" class="text-pink-200 transition hover:text-white">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="text-pink-200 transition hover:text-white">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="text-pink-200 transition hover:text-white">
+              <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="#" class="text-pink-200 transition hover:text-white">
+              <i class="fab fa-zalo"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      document.getElementById('menu-btn').addEventListener('click', function () {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth',
+            });
+
+            // Close mobile menu if open
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (!mobileMenu.classList.contains('hidden')) {
+              mobileMenu.classList.add('hidden');
+            }
+          }
+        });
+      });
+
+      // Add animation when scrolling
+      const animateOnScroll = function () {
+        const elements = document.querySelectorAll('.service-card, .testimonial-card, .blog-card');
+
+        elements.forEach((element) => {
+          const elementPosition = element.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+
+          if (elementPosition < windowHeight - 100) {
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
+          }
+        });
+      };
+
+      // Set initial state
+      document
+        .querySelectorAll('.service-card, .testimonial-card, .blog-card')
+        .forEach((element) => {
+          element.style.opacity = '0';
+          element.style.transform = 'translateY(30px)';
+          element.style.transition = 'all 0.6s ease';
+        });
+
+      // Run on load and scroll
+      window.addEventListener('load', animateOnScroll);
+      window.addEventListener('scroll', animateOnScroll);
+    </script>
+  </body>
+</html>
